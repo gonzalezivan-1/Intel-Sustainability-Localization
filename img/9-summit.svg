@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <rect width="500" height="300" fill="#07121c"/>
+  <path d="M65 232h370M90 232V125h320v107M120 125V88h260v37" fill="none" stroke="#8ec8ed" stroke-width="5"/>
+  <path d="M152 232v-42M205 232v-42M258 232v-42M311 232v-42M364 232v-42" stroke="#0071c5" stroke-width="22"/>
+  <circle cx="250" cy="64" r="27" fill="#0071c5"/>
+  <path d="M250 34v60M220 64h60" stroke="#ffffff" stroke-width="5"/>
+  <text x="32" y="280" fill="#d9eaf4" font-family="Arial" font-size="20" letter-spacing="3">SUSTAINABILITY SUMMIT</text>
+</svg>

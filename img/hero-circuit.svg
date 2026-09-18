@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07121c"/>
+      <stop offset="0.55" stop-color="#075b94"/>
+      <stop offset="1" stop-color="#0071c5"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="38%" r="60%">
+      <stop offset="0" stop-color="#8ec8ed" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#0071c5" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="70" height="70" patternUnits="userSpaceOnUse">
+      <path d="M70 0H0V70" fill="none" stroke="#d9eaf4" stroke-opacity=".11"/>
+      <circle cx="0" cy="0" r="3" fill="#8ec8ed" fill-opacity=".35"/>
+    </pattern>
+    <filter id="soften"><feGaussianBlur stdDeviation="1.5"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <g fill="none" stroke="#bfe4f7" stroke-linecap="round" opacity=".34" filter="url(#soften)">
+    <path d="M-60 690H235V510H520V360H755" stroke-width="7"/>
+    <path d="M280 930V760H600V610H920V450H1110" stroke-width="4"/>
+    <path d="M760 -30V170H970V300H1260V510H1690" stroke-width="6"/>
+    <path d="M1060 930V740H1250V610H1480V470H1670" stroke-width="4"/>
+  </g>
+  <g fill="#d9eaf4" opacity=".6">
+    <circle cx="235" cy="690" r="8"/><circle cx="520" cy="510" r="8"/><circle cx="755" cy="360" r="8"/>
+    <circle cx="600" cy="760" r="6"/><circle cx="920" cy="610" r="6"/><circle cx="1260" cy="300" r="8"/>
+    <circle cx="1250" cy="740" r="6"/><circle cx="1480" cy="610" r="6"/>
+  </g>
+  <g transform="translate(1040 210)" opacity=".4">
+    <rect width="310" height="310" rx="18" fill="#07121c" stroke="#bfe4f7" stroke-width="5"/>
+    <rect x="54" y="54" width="202" height="202" rx="8" fill="#075b94" stroke="#8ec8ed" stroke-width="4"/>
+    <path d="M95 155h120M155 95v120M112 112l86 86M198 112l-86 86" stroke="#d9eaf4" stroke-width="8"/>
+    <g stroke="#bfe4f7" stroke-width="5"><path d="M35 75H0M35 125H0M35 175H0M35 225H0M275 75h35M275 125h35M275 175h35M275 225h35M75 35V0M125 35V0M175 35V0M225 35V0M75 275v35M125 275v35M175 275v35M225 275v35"/></g>
+  </g>
+  <rect width="1600" height="900" fill="#07121c" opacity=".28"/>
+</svg>

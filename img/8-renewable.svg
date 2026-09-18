@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <rect width="500" height="300" fill="#e8f3f8"/>
+  <circle cx="390" cy="75" r="39" fill="#0071c5"/>
+  <path d="M0 227h500M0 246h500" stroke="#004a86" stroke-width="5"/>
+  <g fill="#14547d" stroke="#0071c5" stroke-width="3"><path d="M45 227l75-75 75 75zM110 227l75-75 75 75zM175 227l75-75 75 75zM240 227l75-75 75 75z"/></g>
+  <g stroke="#d9eaf4" stroke-width="3"><path d="M75 197h90M105 167h90M140 197h90M205 167h90M270 197h90"/></g>
+  <path d="M430 227v-74M402 227v-45M458 227v-56" stroke="#004a86" stroke-width="6"/>
+  <text x="32" y="280" fill="#07121c" font-family="Arial" font-size="20" letter-spacing="3">RENEWABLE POWER</text>
+</svg>

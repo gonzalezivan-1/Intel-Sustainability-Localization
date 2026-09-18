@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <rect width="500" height="300" fill="#004a86"/>
+  <circle cx="250" cy="150" r="92" fill="none" stroke="#8ec8ed" stroke-width="4"/>
+  <path d="M158 150h184M250 58c-39 28-39 156 0 184M250 58c39 28 39 156 0 184M178 96c43 22 101 22 144 0M178 204c43-22 101-22 144 0" fill="none" stroke="#d9eaf4" stroke-width="3"/>
+  <path d="M250 150l58-56" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="250" cy="150" r="9" fill="#ffffff"/>
+  <text x="32" y="280" fill="#ffffff" font-family="Arial" font-size="20" letter-spacing="4">RISE / 2030</text>
+</svg>

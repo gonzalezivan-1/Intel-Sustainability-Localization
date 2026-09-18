@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <rect width="500" height="300" fill="#07121c"/>
+  <path d="M0 245h500" stroke="#0071c5" stroke-width="3"/>
+  <path d="M70 245V105h70v140M93 105V65h24v40M190 245V145h72v100M214 145V112h24v33M335 245V80h72v165M358 80V42h25v38" fill="#14547d" stroke="#8ec8ed" stroke-width="3"/>
+  <path d="M105 55c-28-24 31-31 2-52M369 32c-27-20 28-27 2-49" fill="none" stroke="#8ec8ed" stroke-width="8" opacity=".7"/>
+  <path d="M30 220c60-34 110-18 165-42s101-10 155-32 91-19 120-44" fill="none" stroke="#0071c5" stroke-width="5"/>
+  <text x="32" y="280" fill="#d9eaf4" font-family="Arial" font-size="20" letter-spacing="3">GHG EMISSIONS</text>
+</svg>
