@@ -4,12 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <script>
+    // Detect the browser language before the page is displayed.
+    const rtlLanguages = new Set(['ar', 'dv', 'fa', 'he', 'ku', 'ps', 'ur', 'yi']);
+    const detectedLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+    const languageCode = detectedLanguage.toLowerCase().split('-')[0];
+    const isRtl = rtlLanguages.has(languageCode);
+
+    document.documentElement.lang = languageCode;
+    document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+    document.documentElement.dataset.languageDirection = isRtl ? 'rtl' : 'ltr';
+    document.documentElement.classList.toggle('rtl-page', isRtl);
+
+    const bootstrapStylesheet = document.createElement('link');
+    bootstrapStylesheet.rel = 'stylesheet';
+    bootstrapStylesheet.href = isRtl
+      ? 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css'
+      : 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+    document.head.appendChild(bootstrapStylesheet);
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- The navigation links jump to the main sections of the page. -->
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="#top"><img src="img/intel-header-logo.svg" alt="Intel" /></a>
+  <nav class="site-nav navbar" aria-label="Main navigation">
+    <div class="container-fluid p-0">
+      <a class="brand navbar-brand" href="#top"><img src="img/intel-header-logo.svg" alt="Intel" /></a>
+    </div>
     <div class="nav-links">
       <a href="#story">The story</a>
       <a href="#timeline">Timeline</a>
@@ -35,27 +57,99 @@
       </div>
 
       <div class="timeline" role="list">
-        <article class="event" role="listitem" tabindex="0"><img src="img/1.jpg" alt="Intel's early semiconductor technology and founding team" /><div class="event-year">1968</div><div class="event-copy"><h3>Intel Founded</h3><p>Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation, laying the foundation for decades of innovation.</p></div></article>
-        <article class="event" role="listitem" tabindex="0"><img src="img/2.jpg" alt="Close-up of an early computer processor" /><div class="event-year">1971</div><div class="event-copy"><h3>First Microprocessor</h3><p>Intel debuts the 4004, the world's first commercial microprocessor, igniting a revolution in computing.</p></div></article>
-        <article class="event" role="listitem" tabindex="0"><img src="img/3.jpg" alt="Intel 8086 processor" /><div class="event-year">1978</div><div class="event-copy"><h3>8086 Processor</h3><p>The 8086 establishes the x86 architecture that drives countless PCs and servers in the modern era.</p></div></article>
-        <article class="event" role="listitem" tabindex="0"><img src="img/4.jpg" alt="Intel 386 processor" /><div class="event-year">1985</div><div class="event-copy"><h3>386 Processor</h3><p>The 386 processor introduces 32-bit architecture and ushers in a new era of performance and multitasking.</p></div></article>
-        <article class="event" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Industrial smokestacks against a hazy sky" /><div class="event-year">2006</div><div class="event-copy"><h3>Peak GHG Emissions</h3><p>Intel reaches its highest operational greenhouse gas emissions, prompting major investment in abatement and efficiency.</p></div></article>
-        <article class="event" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Earth viewed from space" /><div class="event-year">2020</div><div class="event-copy"><h3>RISE Strategy</h3><p>Intel launches its Responsible, Inclusive, Sustainable, Enabling strategy and 2030 goals.</p></div></article>
-        <article class="event" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Solar panels under a bright sky" /><div class="event-year">2022</div><div class="event-copy"><h3>Net-Zero By 2040</h3><p>Intel commits to net-zero Scope 1 and 2 greenhouse gas emissions across global operations by 2040.</p></div></article>
-        <article class="event" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Wind turbines and solar panels in a field" /><div class="event-year">2023</div><div class="event-copy"><h3>Renewable Electricity</h3><p>The company reaches 99% renewable electricity usage worldwide, lowering carbon emissions across operations.</p></div></article>
-        <article class="event" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="People collaborating at a sustainability event" /><div class="event-year">2024</div><div class="event-copy"><h3>Sustainability Summit</h3><p>Intel hosts its first Sustainability Summit to collaborate on next-generation sustainable manufacturing.</p></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="img/1.jpg" alt="Intel's early semiconductor technology and founding team" /><div class="event-year">1968</div><div class="event-copy"><h3>Intel Founded</h3><p>Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation, laying the foundation for decades of innovation.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="img/2.jpg" alt="Close-up of an early computer processor" /><div class="event-year">1971</div><div class="event-copy"><h3>First Microprocessor</h3><p>Intel debuts the 4004, the world's first commercial microprocessor, igniting a revolution in computing.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="img/3.jpg" alt="Intel 8086 processor" /><div class="event-year">1978</div><div class="event-copy"><h3>8086 Processor</h3><p>The 8086 establishes the x86 architecture that drives countless PCs and servers in the modern era.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="img/4.jpg" alt="Intel 386 processor" /><div class="event-year">1985</div><div class="event-copy"><h3>386 Processor</h3><p>The 386 processor introduces 32-bit architecture and ushers in a new era of performance and multitasking.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Industrial smokestacks against a hazy sky" /><div class="event-year">2006</div><div class="event-copy"><h3>Peak GHG Emissions</h3><p>Intel reaches its highest operational greenhouse gas emissions, prompting major investment in abatement and efficiency.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Earth viewed from space" /><div class="event-year">2020</div><div class="event-copy"><h3>RISE Strategy</h3><p>Intel launches its Responsible, Inclusive, Sustainable, Enabling strategy and 2030 goals.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Solar panels under a bright sky" /><div class="event-year">2022</div><div class="event-copy"><h3>Net-Zero By 2040</h3><p>Intel commits to net-zero Scope 1 and 2 greenhouse gas emissions across global operations by 2040.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Wind turbines and solar panels in a field" /><div class="event-year">2023</div><div class="event-copy"><h3>Renewable Electricity</h3><p>The company reaches 99% renewable electricity usage worldwide, lowering carbon emissions across operations.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
+        <article class="event col" role="listitem" tabindex="0"><img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="People collaborating at a sustainability event" /><div class="event-year">2024</div><div class="event-copy"><h3>Sustainability Summit</h3><p>Intel hosts its first Sustainability Summit to collaborate on next-generation sustainable manufacturing.</p><a class="learn-more" href="#future">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></article>
       </div>
     </section>
 
-    <section class="future-section" id="future" aria-labelledby="future-title">
-      <p class="eyebrow">LOOKING AHEAD</p>
-      <h2 id="future-title">The work continues.</h2>
-      <p>Every milestone is a starting point for the next one.</p>
+    <section class="focus-section bg-light py-5" id="focus-areas" aria-labelledby="focus-title">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <article class="card h-100 border-0 shadow-sm p-4">
+              <i class="bi bi-globe2 fs-2 text-primary mb-3" aria-hidden="true"></i>
+              <h2 class="h4" id="focus-title">Responsible Operations</h2>
+              <p class="mb-0">Reducing emissions and using resources more efficiently across Intel's global operations.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="card h-100 border-0 shadow-sm p-4">
+              <i class="bi bi-droplet-half fs-2 text-primary mb-3" aria-hidden="true"></i>
+              <h2 class="h4">Water Stewardship</h2>
+              <p class="mb-0">Investing in water conservation and restoration projects in communities near Intel sites.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="card h-100 border-0 shadow-sm p-4">
+              <i class="bi bi-people fs-2 text-primary mb-3" aria-hidden="true"></i>
+              <h2 class="h4">Inclusive Innovation</h2>
+              <p class="mb-0">Working with employees, partners, and communities to create a more responsible future.</p>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2024 Intel Sustainability Archive</p>
+    <section class="footer-carousel container py-5" id="future" aria-label="Sustainability updates">
+      <div id="footerCarousel" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#footerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Show Looking Ahead message"></button>
+          <button type="button" data-bs-target="#footerCarousel" data-bs-slide-to="1" aria-label="Show newsletter subscription form"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" aria-labelledby="future-title">
+            <div class="future-section text-center px-4 py-5">
+              <p class="eyebrow">LOOKING AHEAD</p>
+              <h2 id="future-title">The work continues.</h2>
+              <p>Every milestone is a starting point for the next one.</p>
+            </div>
+          </div>
+          <div class="carousel-item" id="newsletter" aria-labelledby="newsletter-title">
+            <div class="newsletter-section bg-light text-dark rounded px-4 py-5">
+              <h2 class="h3" id="newsletter-title">Stay informed about sustainable technology</h2>
+              <p>Subscribe for updates about Intel's sustainability goals and progress.</p>
+              <form class="row g-3" action="#newsletter" method="post">
+                <div class="col-12 col-md-8">
+                  <label class="form-label" for="newsletter-email">Email address</label>
+                  <input class="form-control" type="email" id="newsletter-email" name="email" autocomplete="email" aria-describedby="newsletter-help" required />
+                  <div class="form-text" id="newsletter-help">We will only use your email for sustainability updates.</div>
+                </div>
+                <div class="col-12 col-md-4 d-flex align-items-end">
+                  <button class="btn btn-primary w-100" type="submit">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#footerCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous slide</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#footerCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next slide</span>
+        </button>
+      </div>
+    </section>
+    <div class="footer-content">
+      <p>&copy; 2024 Intel Sustainability Archive</p>
+      <nav aria-label="Footer navigation">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Use</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
